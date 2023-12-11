@@ -57,6 +57,12 @@ function validetaDate() {
     input.forEach((input) => {
       input.style.borderColor = "#FF5959";
     });
+  } else {
+    errorMessage.style.display = "none";
+    errorText.style.color = "#716f6f";
+    input.forEach((input) => {
+      input.style.borderColor = "#ccc";
+    });
   }
 }
 
@@ -74,5 +80,11 @@ function required() {
       input.style.borderColor = "#FF5959";
     });
     errorText.style.color = "#FF5959";
+  } else {
+    errorEmty.style.display = "none";
+    input.forEach((input) => {
+      input.style.borderColor = "#ccc";
+    });
+    errorText.style.color = "#716f6f";
   }
 }
