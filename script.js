@@ -6,6 +6,7 @@ document.getElementById("calculate").addEventListener("click", function () {
   const age = calculateAge(birthDate);
   displayAge(age);
   validetaDate();
+  required();
 });
 
 function calculateAge(birthDate) {
@@ -40,10 +41,38 @@ function validetaDate() {
   const day = parseInt(document.getElementById("day").value);
   const month = parseInt(document.getElementById("month").value);
   const year = parseInt(document.getElementById("year").value);
+  const errorMessage = document.querySelector(".invalid");
+  const errorText = document.querySelector(".date");
+  const input = document.querySelectorAll(".input-container input");
 
-  const errorDay = document.getElementById("errorDay");
+  if (
+    day.valueOf() > 31 ||
+    day.valueOf() < 1 ||
+    month.valueOf() > 12 ||
+    month.valueOf() < 1 ||
+    year.valueOf() > 2023
+  ) {
+    errorMessage.style.display = "flex";
+    errorText.style.color = "#FF5959";
+    input.forEach((input) => {
+      input.style.borderColor = "#FF5959";
+    });
+  }
+}
 
-  if (day.value > 31 || day.value < 1) {
-    errorDay.style.display = "block";
+function required() {
+  const day = parseInt(document.getElementById("day").value);
+  const month = parseInt(document.getElementById("month").value);
+  const year = parseInt(document.getElementById("year").value);
+  const input = document.querySelectorAll(".input-container input");
+  const errorText = document.querySelector(".date");
+
+  const errorEmty = document.querySelector(".emty");
+  if (isNaN(day) || isNaN(month) || isNaN(year)) {
+    errorEmty.style.display = "flex";
+    input.forEach((input) => {
+      input.style.borderColor = "#FF5959";
+    });
+    errorText.style.color = "#FF5959";
   }
 }

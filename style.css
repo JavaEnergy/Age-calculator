@@ -73,6 +73,9 @@ main {
 .required {
   display: none;
 }
+.invalid {
+  display: none;
+}
 svg {
   background-color: #854dff;
   border-radius: 50%;
