@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Age Calculator</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <main>
+      <div class="date">
+        <p>day</p>
+        <p>month</p>
+        <p>year</p>
+      </div>
+      <div class="input-container">
+        <input
+          type="number"
+          id="day"
+          name="day"
+          min="1"
+          max="31"
+          placeholder="DD"
+        />
+        <input
+          type="number"
+          id="month"
+          name="month"
+          min="1"
+          max="12"
+          placeholder="MM"
+        />
+        <input
+          type="number"
+          id="year"
+          name="year"
+          min="1900"
+          max="2100"
+          placeholder="YYYY"
+        />
+      </div>
+      <div class="error invalid">
+        <p id="errorDay">Must be a valid day</p>
+        <p id="errorMonth">Must be a valid month</p>
+        <p id="errorYear">Must be in the past</p>
+      </div>
+      <div class="error emty">
+        <p>This field is required</p>
+        <p>This field is required</p>
+        <p>This field is required</p>
+      </div>
+      <button>
+        <svg
+          id="calculate"
+          xmlns="http://www.w3.org/2000/svg"
+          width="64"
+          height="64"
+          viewBox="0 0 46 44"
+        >
+          <g fill="none" stroke="#FFF" stroke-width="2">
+            <path
+              d="M1 22.019C8.333 21.686 23 25.616 23 44M23 44V0M45 22.019C37.667 21.686 23 25.616 23 44"
+            />
+          </g>
+        </svg>
+      </button>
+      <div class="result">
+        <h1><span>--</span> years</h1>
+        <h1><span>--</span> months</h1>
+        <h1><span>--</span> days</h1>
+      </div>
+    </main>
+    <script src="./script.js"></script>
+  </body>
+</html>
